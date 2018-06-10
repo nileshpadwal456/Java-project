@@ -41,7 +41,7 @@ pipeline {
         label 'CentOS'
       }
       steps {
-        sh "wget http://52.36.185.16/rectangles/all/rectangle_.${env.BUILD_NUMBER}.jar"
+        sh "wget http://52.36.185.16/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
       }
     }
@@ -50,7 +50,7 @@ pipeline {
         docker 'openjdk:8u121-jre'
       }
       steps {
-        sh "wget http://52.36.185.16/rectangles/all/rectangle_.${env.BUILD_NUMBER}.jar"
+        sh "wget http://52.36.185.16/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
       }
     }
